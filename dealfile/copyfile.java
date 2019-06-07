@@ -1,4 +1,4 @@
-package qxy;
+package dealfile;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-public class test {
+public class copyfile {
     public static void main(String[] args) {
         //fileChannelCopy fcc = new fileChannelCopy();
         File resfile = new File("E:\\view.xml");
@@ -15,10 +15,10 @@ public class test {
             if(resfile.isFile()) {
 
             }else {
-                System.out.println("不是一个文件");
+                System.out.println("涓嶆槸涓�涓枃浠�");
             }
         }else {
-            System.out.println("F:\\view.sql不存在");
+            System.out.println("F:\\view.sql涓嶅瓨鍦�");
             return ;
         }
 
@@ -43,12 +43,12 @@ public class test {
         try {
             fis = new FileInputStream(resfile);
             fos = new FileOutputStream(tfile);
-            in = fis.getChannel();// 得到对应的文件通道
-            out= fos.getChannel();// 得到对应的文件通道
+            in = fis.getChannel();// 寰楀埌瀵瑰簲鐨勬枃浠堕�氶亾
+            out= fos.getChannel();// 寰楀埌瀵瑰簲鐨勬枃浠堕�氶亾
             long start = System.currentTimeMillis();
-            in.transferTo(0, in.size(), out);// 连接两个通道，并且从in通道读取，然后写入out通道
+            in.transferTo(0, in.size(), out);// 杩炴帴涓や釜閫氶亾锛屽苟涓斾粠in閫氶亾璇诲彇锛岀劧鍚庡啓鍏ut閫氶亾
             long end = System.currentTimeMillis();
-            System.out.println("运行时间："+(start-end)+"毫秒");
+            System.out.println("杩愯鏃堕棿锛�"+(start-end)+"姣");
         } catch (Exception e) {
 // TODO Auto-generated catch block
             e.printStackTrace();
